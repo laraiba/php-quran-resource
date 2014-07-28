@@ -1,4 +1,4 @@
-php-quran-resource
+PHP Quran Resource
 ==================
 
-PHP Al Quran Resource Component
+Al Quran Resource Component for PHP.

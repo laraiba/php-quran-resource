@@ -1,0 +1,43 @@
+{
+    "name": "laraiba/resource",
+    "type": "library",
+    "description": "PHP library which provides Al Quran for your application",
+    "keywords": [
+        "al quran",
+        "quran",
+        "moslem",
+        "muslim",
+        "islam"
+    ],
+    "homepage": "https://github.com/laraiba/php-quran-resource",
+    "authors": [
+        {
+            "name": "Andy Librian",
+            "email": "andylibrian@gmail.com",
+            "homepage": "http://andylibrian.pro",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "1.4.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Laraiba\\": "src"
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://github.com/laraiba/php-quran-resource/issues",
+        "source": "https://github.com/laraiba/php-quran-resource"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}

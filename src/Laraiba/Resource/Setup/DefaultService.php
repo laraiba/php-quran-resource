@@ -6,7 +6,7 @@ use Laraiba\Resource\ServiceContainer\ServiceContainer;
 
 class DefaultService
 {
-    public function getServiceContainer()
+    public static function getServiceContainer()
     {
         $container = new ServiceContainer();
         $container->register(new DefaultServiceProvider());

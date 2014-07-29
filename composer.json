@@ -19,7 +19,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "pimple/pimple": "~3.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "1.4.*"

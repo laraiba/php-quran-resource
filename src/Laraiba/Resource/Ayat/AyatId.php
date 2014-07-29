@@ -33,4 +33,20 @@ class AyatId implements AyatIdInterface
     {
         return $this->value;
     }
+
+    public static function splitValue($value)
+    {
+        $value = (string)$value;
+
+        if (preg_match(self::$format, $value, $matches) === 1) {
+            return array(
+                'surat_number' => $matches[1],
+                'ayat_number'  => $matches[2],
+            );
+        } else {
+            throw new \InvalidArgumentException(
+                'Invalid Ayat Id was given. The accepted format is number:number, eg. 2:10.'
+            );
+        }
+    }
 }

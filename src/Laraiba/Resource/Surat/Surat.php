@@ -54,6 +54,13 @@ class Surat implements SuratInterface
         $this->ayatList[] = $ayat;
     }
 
+    public function addAyatList(array $ayatList)
+    {
+        foreach ($ayatList as $ayat) {
+            $this->addAyat($ayat);
+        }
+    }
+
     public function getAyatList()
     {
         return $this->ayatList;

@@ -31,8 +31,8 @@ Usage
 ```php
 require_once __DIR__ . '/vendor/autoload.php';
 
-$ayatRepositoryFactory = new Laraiba\Resource\Ayat\AyatRepositoryFactory();
-$ayatRepository = $ayatRepositoryFactory->createAyatRepository();
+$serviceContainer = \Laraiba\Resource\Setup\DefaultService::getServiceContainer();
+$ayatRepository  = $serviceContainer->get('laraiba.ayat_repository');
 
 $ayat = $ayatRepository->findOneById('2:3');
 
@@ -44,15 +44,8 @@ echo $ayat->getText();
 ```php
 require_once __DIR__ . '/vendor/autoload.php';
 
-$ayatRepositoryFactory = new Laraiba\Resource\Ayat\AyatRepositoryFactory();
-$ayatRepository = $ayatRepositoryFactory->createAyatRepository();
-
-$suratRepositoryFactory = new Laraiba\Resource\Surat\SuratRepositoryFactory();
-$ayatListInitializer = new Laraiba\Resource\Surat\Initializer\AyatListInitializer($ayatRepository);
-
-$suratRepositoryFactory->addInitializer($ayatListInitializer);
-
-$suratRepository = $suratRepositoryFactory->createSuratRepository();
+$serviceContainer = \Laraiba\Resource\Setup\DefaultService::getServiceContainer();
+$suratRepository  = $serviceContainer->get('laraiba.surat_repository');
 
 $surat = $suratRepository->findOneBySuratNumber(114);
 

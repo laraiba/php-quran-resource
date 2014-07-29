@@ -10,7 +10,7 @@ class ArrayAyatRepository implements AyatRepositoryInterface
     {
         $this->data = $data;
     }
-    
+
     public function findAll()
     {
         $merged = array();
@@ -18,7 +18,7 @@ class ArrayAyatRepository implements AyatRepositoryInterface
         foreach ($this->data as $surat) {
             $merged = array_merge($merged, $surat);
         }
-        
+
         return $merged;
     }
 
@@ -34,9 +34,9 @@ class ArrayAyatRepository implements AyatRepositoryInterface
     public function findOneById(AyatIdInterface $id)
     {
         $ayat = null;
-        
+
         if ($id instanceof AyatId) {
-            $split = AyatId::splitValue((string)$id);
+            $split = AyatId::splitValue((string) $id);
 
             if (isset($this->data[$split['surat_number']][$split['ayat_number']])) {
                 return $this->data[$split['surat_number']][$split['ayat_number']];

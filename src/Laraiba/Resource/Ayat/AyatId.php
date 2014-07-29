@@ -36,7 +36,7 @@ class AyatId implements AyatIdInterface
 
     public static function splitValue($value)
     {
-        $value = (string)$value;
+        $value = (string) $value;
 
         if (preg_match(self::$format, $value, $matches) === 1) {
             return array(

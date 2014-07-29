@@ -25,7 +25,7 @@ php composer.phar require laraiba/resource:dev-master
 Usage
 -----
 
-#### Get and Show a single ayat
+#### 1. Get and Show a single ayat
 
 
 ```php
@@ -39,3 +39,24 @@ $ayat = $ayatRepository->findOneById('2:3');
 echo $ayat->getText();
 ```
 
+#### 2. Show surat
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$ayatRepositoryFactory = new Laraiba\Resource\Ayat\AyatRepositoryFactory();
+$ayatRepository = $ayatRepositoryFactory->createAyatRepository();
+
+$suratRepositoryFactory = new Laraiba\Resource\Surat\SuratRepositoryFactory();
+$ayatListInitializer = new Laraiba\Resource\Surat\Initializer\AyatListInitializer($ayatRepository);
+
+$suratRepositoryFactory->addInitializer($ayatListInitializer);
+
+$suratRepository = $suratRepositoryFactory->createSuratRepository();
+
+$surat = $suratRepository->findOneBySuratNumber(114);
+
+foreach ($surat->getAyatList() as $ayat) {
+    echo $ayat->getAyatNumber() . ':' . $ayat->getText() . "\n";
+}
+```

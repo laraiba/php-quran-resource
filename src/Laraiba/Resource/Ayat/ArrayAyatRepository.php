@@ -31,9 +31,13 @@ class ArrayAyatRepository implements AyatRepositoryInterface
         return array();
     }
 
-    public function findOneById(AyatIdInterface $id)
+    public function findOneById($id)
     {
         $ayat = null;
+
+        if (is_string($id)) {
+            $id = new AyatId($id);
+        }
 
         if ($id instanceof AyatId) {
             $split = AyatId::splitValue((string) $id);

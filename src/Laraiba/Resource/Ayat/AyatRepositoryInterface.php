@@ -8,5 +8,5 @@ interface AyatRepositoryInterface
 
     public function findBySuratNumber($number);
 
-    public function findOneById(AyatIdInterface $id);
+    public function findOneById($id);
 }

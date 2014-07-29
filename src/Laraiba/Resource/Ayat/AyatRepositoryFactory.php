@@ -13,6 +13,8 @@ class AyatRepositoryFactory
             foreach ($ayatList as $ayatNumber => $ayatText) {
                 $ayat = new Ayat(new AyatId($suratNumber . ':' . $ayatNumber));
                 $ayat->setText($ayatText);
+                $ayat->setSuratNumber($suratNumber);
+                $ayat->setAyatNumber($ayatNumber);
 
                 $ayatData[$suratNumber][$ayatNumber] = $ayat;
             }

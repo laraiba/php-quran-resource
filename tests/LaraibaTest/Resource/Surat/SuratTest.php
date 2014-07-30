@@ -45,4 +45,14 @@ class SuratTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1, $this->surat->getAyatCount());
         $this->assertEquals(array($ayat), $this->surat->getAyatList());
     }
+
+    public function testAddAyatList()
+    {
+        $ayat1 = $this->getMock('Laraiba\Resource\Ayat\AyatInterface');
+        $ayat2 = $this->getMock('Laraiba\Resource\Ayat\AyatInterface');
+
+        $this->surat->addAyatList(array($ayat1, $ayat2));
+        $this->assertEquals(2, $this->surat->getAyatCount());
+        $this->assertEquals(array($ayat1, $ayat2), $this->surat->getAyatList());
+    }
 }

@@ -38,4 +38,23 @@ class AyatIdTest extends \PHPUnit_Framework_TestCase
         $ayatId = new AyatId('4:5');
         $this->assertInstanceOf('Laraiba\Resource\Ayat\AyatIdInterface', $ayatId);
     }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testSplitValueThrowsExceptionOnInvalidArgument()
+    {
+        AyatId::splitValue('abcdef');
+    }
+
+    public function testSplitValueReturnArray()
+    {
+        $id = '2:255';
+        $expected = array(
+            'surat_number' => 2,
+            'ayat_number'  => 255,
+        );
+
+        $this->assertEquals($expected, AyatId::splitValue($id));
+    }
 }

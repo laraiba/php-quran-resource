@@ -57,6 +57,15 @@ class ArrayAyatRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($ayat, $repository->findOneById($ayat->getId()));
     }
 
+    public function testFindOneByIdWithStringArgument()
+    {
+        $ayat = $this->getAyatMock('5:13');
+        $data['5']['13'] = $ayat;
+
+        $repository = new ArrayAyatRepository($data);
+        $this->assertSame($ayat, $repository->findOneById('5:13'));
+    }
+
     public function testFindOneByIdReturnNullIfNotFound()
     {
         $repository = new ArrayAyatRepository(array());

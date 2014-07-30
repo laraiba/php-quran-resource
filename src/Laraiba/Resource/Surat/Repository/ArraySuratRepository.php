@@ -1,6 +1,6 @@
 <?php
 
-namespace Laraiba\Resource\Surat;
+namespace Laraiba\Resource\Surat\Repository;
 
 class ArraySuratRepository implements SuratRepositoryInterface
 {

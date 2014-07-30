@@ -18,7 +18,7 @@ class DefaultServiceProvider implements ServiceProviderInterface
         };
 
         $pimple['laraiba.surat_repository_factory'] = function ($c) {
-            return new \Laraiba\Resource\Surat\SuratRepositoryFactory();
+            return new \Laraiba\Resource\Surat\Repository\SuratRepositoryFactory();
         };
 
         $pimple->extend('laraiba.surat_repository_factory', function ($suratRepositoryFactory, $c) {

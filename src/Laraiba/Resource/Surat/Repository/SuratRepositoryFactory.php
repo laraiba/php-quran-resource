@@ -1,6 +1,9 @@
 <?php
 
-namespace Laraiba\Resource\Surat;
+namespace Laraiba\Resource\Surat\Repository;
+
+use Laraiba\Resource\Surat\Initializer\SuratInitializerInterface;
+use Laraiba\Resource\Surat\Surat;
 
 class SuratRepositoryFactory
 {
@@ -18,7 +21,7 @@ class SuratRepositoryFactory
 
     public function createSuratRepository()
     {
-        $data = include __DIR__ . '/../../../../data/surat-data.php';
+        $data = include __DIR__ . '/../../../../../data/surat-data.php';
         $suratData = array();
 
         foreach ($data as $suratNumber => $surat) {

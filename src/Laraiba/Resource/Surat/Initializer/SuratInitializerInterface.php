@@ -1,6 +1,8 @@
 <?php
 
-namespace Laraiba\Resource\Surat;
+namespace Laraiba\Resource\Surat\Initializer;
+
+use Laraiba\Resource\Surat\SuratInterface;
 
 interface SuratInitializerInterface
 {

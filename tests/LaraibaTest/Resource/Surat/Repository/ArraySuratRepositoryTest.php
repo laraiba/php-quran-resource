@@ -1,16 +1,16 @@
 <?php
 
-namespace LaraibaTest\Resource\Surat;
+namespace LaraibaTest\Resource\Surat\Repository;
 
-use Laraiba\Resource\Surat\SuratRepositoryInterface;
-use Laraiba\Resource\Surat\ArraySuratRepository;
+use Laraiba\Resource\Surat\Repository\SuratRepositoryInterface;
+use Laraiba\Resource\Surat\Repository\ArraySuratRepository;
 
 class ArraySuratRepositoryTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstanceOfSuratRepositoryInterface()
     {
         $repository = new ArraySuratRepository(array());
-        $this->assertInstanceOf('Laraiba\Resource\Surat\SuratRepositoryInterface', $repository);
+        $this->assertInstanceOf('Laraiba\Resource\Surat\Repository\SuratRepositoryInterface', $repository);
     }
 
     public function testFindAll()

@@ -27,12 +27,11 @@ Usage
 
 #### 1. Get and Show a single ayat
 
-
 ```php
 require_once __DIR__ . '/vendor/autoload.php';
 
 $serviceContainer = \Laraiba\Resource\Setup\DefaultService::getServiceContainer();
-$ayatRepository  = $serviceContainer->get('laraiba.ayat_repository');
+$ayatRepository   = $serviceContainer->get('laraiba.ayat_repository');
 
 $ayat = $ayatRepository->findOneById('2:3');
 
@@ -53,3 +52,23 @@ foreach ($surat->getAyatList() as $ayat) {
     echo $ayat->getAyatNumber() . ':' . $ayat->getText() . "\n";
 }
 ```
+
+
+Services
+--------
+
+| Service          | Id                       | Interface                                       |
+| ---------------- | ------------------------ | ----------------------------------------------- |
+| Ayat Repository  | laraiba.ayat_repository  | Laraiba\Resource\Ayat\AyatRepositoryInterface   |
+| Surat Repository | laraiba.surat_repository | Laraiba\Resource\Surat\SuratRepositoryInterface |
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$serviceContainer = \Laraiba\Resource\Setup\DefaultService::getServiceContainer();
+
+$ayatRepository   = $serviceContainer->get('laraiba.ayat_repository');
+$suratRepository  = $serviceContainer->get('laraiba.surat_repository');
+```
+
+

@@ -10,7 +10,7 @@ class DefaultServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['laraiba.ayat_repository_factory'] = function ($c) {
-            return new \Laraiba\Resource\Ayat\AyatRepositoryFactory();
+            return new \Laraiba\Resource\Ayat\Repository\AyatRepositoryFactory();
         };
 
         $pimple['laraiba.ayat_repository'] = function ($c) {

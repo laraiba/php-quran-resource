@@ -1,6 +1,6 @@
 <?php
 
-namespace Laraiba\Resource\Ayat;
+namespace Laraiba\Resource\Ayat\Repository;
 
 interface AyatRepositoryInterface
 {

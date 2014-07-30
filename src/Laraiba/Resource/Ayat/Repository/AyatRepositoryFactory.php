@@ -1,12 +1,15 @@
 <?php
 
-namespace Laraiba\Resource\Ayat;
+namespace Laraiba\Resource\Ayat\Repository;
+
+use Laraiba\Resource\Ayat\AyatId;
+use Laraiba\Resource\Ayat\Ayat;
 
 class AyatRepositoryFactory
 {
     public function createAyatRepository()
     {
-        $data = include __DIR__ . '/../../../../data/quran-uthmani.php';
+        $data = include __DIR__ . '/../../../../../data/quran-uthmani.php';
         $ayatData = array();
 
         foreach ($data as $suratNumber => $ayatList) {

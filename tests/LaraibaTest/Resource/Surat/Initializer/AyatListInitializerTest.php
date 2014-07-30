@@ -8,7 +8,7 @@ class AyatListInitializerTest extends \PHPUnit_Framework_TestCase
 {
     public function testPreserveAyatRepository()
     {
-        $ayatRepository = $this->getMock('Laraiba\Resource\Ayat\AyatRepositoryInterface');
+        $ayatRepository = $this->getMock('Laraiba\Resource\Ayat\Repository\AyatRepositoryInterface');
 
         $ayatListInitializer = new AyatListInitializer($ayatRepository);
         $this->assertSame($ayatRepository, $ayatListInitializer->getAyatRepository());
@@ -25,7 +25,7 @@ class AyatListInitializerTest extends \PHPUnit_Framework_TestCase
         $surat->expects($this->once())
               ->method('addAyatList');
 
-        $ayatRepository = $this->getMock('Laraiba\Resource\Ayat\AyatRepositoryInterface');
+        $ayatRepository = $this->getMock('Laraiba\Resource\Ayat\Repository\AyatRepositoryInterface');
 
         $ayatRepository->expects($this->once())
                        ->method('findBySuratNumber')

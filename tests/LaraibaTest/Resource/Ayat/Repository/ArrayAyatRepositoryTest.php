@@ -1,9 +1,9 @@
 <?php
 
-namespace LaraibaTest\Resource\Ayat;
+namespace LaraibaTest\Resource\Ayat\Repository;
 
-use Laraiba\Resource\Ayat\AyatRepositoryInterface;
-use Laraiba\Resource\Ayat\ArrayAyatRepository;
+use Laraiba\Resource\Ayat\Repository\AyatRepositoryInterface;
+use Laraiba\Resource\Ayat\Repository\ArrayAyatRepository;
 
 class ArrayAyatRepositoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -16,7 +16,7 @@ class ArrayAyatRepositoryTest extends \PHPUnit_Framework_TestCase
 
     public function testInstanceOfAyatRepositoryInterface()
     {
-        $this->assertInstanceOf('Laraiba\Resource\Ayat\AyatRepositoryInterface', $this->repository);
+        $this->assertInstanceOf('Laraiba\Resource\Ayat\Repository\AyatRepositoryInterface', $this->repository);
     }
 
     public function testFindAll()

@@ -1,6 +1,8 @@
 <?php
 
-namespace Laraiba\Resource\Ayat;
+namespace Laraiba\Resource\Ayat\Repository;
+
+use Laraiba\Resource\Ayat\AyatId;
 
 class ArrayAyatRepository implements AyatRepositoryInterface
 {

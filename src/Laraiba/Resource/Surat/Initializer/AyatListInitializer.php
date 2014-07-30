@@ -4,7 +4,7 @@ namespace Laraiba\Resource\Surat\Initializer;
 
 use Laraiba\Resource\Surat\SuratInitializerInterface;
 use Laraiba\Resource\Surat\SuratInterface;
-use Laraiba\Resource\Ayat\AyatRepositoryInterface;
+use Laraiba\Resource\Ayat\Repository\AyatRepositoryInterface;
 
 class AyatListInitializer implements SuratInitializerInterface
 {

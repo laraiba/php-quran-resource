@@ -33,9 +33,13 @@ require_once __DIR__ . '/vendor/autoload.php';
 $serviceContainer = \Laraiba\Resource\Setup\DefaultService::getServiceContainer();
 $ayatRepository   = $serviceContainer->get('laraiba.ayat_repository');
 
-$ayat = $ayatRepository->findOneById('2:3');
+$ayat = $ayatRepository->findOneById('1:7');
 
 echo $ayat->getText();
+```
+
+```
+صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ
 ```
 
 #### 2. Show surat
@@ -49,10 +53,18 @@ $suratRepository  = $serviceContainer->get('laraiba.surat_repository');
 $surat = $suratRepository->findOneBySuratNumber(114);
 
 foreach ($surat->getAyatList() as $ayat) {
-    echo $ayat->getAyatNumber() . ':' . $ayat->getText() . "\n";
+    echo $ayat->getAyatNumber() . ') ' . $ayat->getText() . "\n";
 }
 ```
 
+```
+1) قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ
+2) مَلِكِ ٱلنَّاسِ
+3) إِلَٰهِ ٱلنَّاسِ
+4) مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ
+5) ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ
+6) مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ
+```
 
 Services
 --------

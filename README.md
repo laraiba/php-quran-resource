@@ -57,10 +57,10 @@ foreach ($surat->getAyatList() as $ayat) {
 Services
 --------
 
-| Service          | Id                       | Interface                                       |
-| ---------------- | ------------------------ | ----------------------------------------------- |
-| Ayat Repository  | laraiba.ayat_repository  | Laraiba\Resource\Ayat\AyatRepositoryInterface   |
-| Surat Repository | laraiba.surat_repository | Laraiba\Resource\Surat\SuratRepositoryInterface |
+| Service          | Id                       | Interface                                                  |
+| ---------------- | ------------------------ | ---------------------------------------------------------- |
+| Ayat Repository  | laraiba.ayat_repository  | Laraiba\Resource\Ayat\Repository\AyatRepositoryInterface   |
+| Surat Repository | laraiba.surat_repository | Laraiba\Resource\Surat\Repository\SuratRepositoryInterface |
 
 ```php
 require_once __DIR__ . '/vendor/autoload.php';

@@ -66,21 +66,67 @@ foreach ($surat->getAyatList() as $ayat) {
 6) مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ
 ```
 
-Services
---------
+#### 3. Show translation
 
-| Service          | Id                       | Interface                                                  |
-| ---------------- | ------------------------ | ---------------------------------------------------------- |
-| Ayat Repository  | laraiba.ayat_repository  | Laraiba\Resource\Ayat\Repository\AyatRepositoryInterface   |
-| Surat Repository | laraiba.surat_repository | Laraiba\Resource\Surat\Repository\SuratRepositoryInterface |
+Use composer to include a translation to your project:
+```sh
+php composer.phar require laraiba/translation-bahasa:*
+```
 
 ```php
 require_once __DIR__ . '/vendor/autoload.php';
 
 $serviceContainer = \Laraiba\Resource\Setup\DefaultService::getServiceContainer();
-
-$ayatRepository   = $serviceContainer->get('laraiba.ayat_repository');
 $suratRepository  = $serviceContainer->get('laraiba.surat_repository');
+
+$surat = $suratRepository->findOneBySuratNumber(1);
+
+$translationManager = $serviceContainer->get('laraiba.translation_manager');
+$translationManager->addTranslation(new \Laraiba\Translation\Bahasa\IndonesianMinistryTranslation());
+
+foreach ($surat->getAyatList() as $ayat) {
+    echo $ayat->getAyatNumber() . ') ' . $ayat->getText() . "\n";
+
+    $translatedAyat = $translationManager->translate($ayat);
+    echo $translatedAyat->getAyatNumber() . ') ' . $translatedAyat->getText() . "\n";
+}
+```
+
+```
+1) بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+1) Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang.
+2) ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ
+2) Segala puji bagi Allah, Tuhan semesta alam.
+3) ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+3) Maha Pemurah lagi Maha Penyayang.
+4) مَٰلِكِ يَوْمِ ٱلدِّينِ
+4) Yang menguasai di Hari Pembalasan.
+5) إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
+5) Hanya Engkaulah yang kami sembah, dan hanya kepada Engkaulah kami meminta pertolongan.
+6) ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ
+6) Tunjukilah kami jalan yang lurus,
+7) صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ
+7) (yaitu) Jalan orang-orang yang telah Engkau beri nikmat kepada mereka; bukan (jalan) mereka yang dimurkai dan bukan (pula jalan) mereka yang sesat.
+```
+
+
+Services
+--------
+
+Service                     | Interface                                                  |
+------------------------    | ---------------------------------------------------------- |
+laraiba.ayat_repository     | Laraiba\Resource\Ayat\Repository\AyatRepositoryInterface   |
+laraiba.surat_repository    | Laraiba\Resource\Surat\Repository\SuratRepositoryInterface |
+laraiba.translation_manager | Laraiba\Resource\Translation\TranslationManagerInterface   |
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$serviceContainer    = \Laraiba\Resource\Setup\DefaultService::getServiceContainer();
+
+$ayatRepository      = $serviceContainer->get('laraiba.ayat_repository');
+$suratRepository     = $serviceContainer->get('laraiba.surat_repository');
+$translationManager  = $serviceContainer->get('laraiba.translation_manager');
 ```
 
 

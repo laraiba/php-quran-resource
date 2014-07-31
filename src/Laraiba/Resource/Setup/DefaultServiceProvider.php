@@ -33,5 +33,10 @@ class DefaultServiceProvider implements ServiceProviderInterface
         $pimple['laraiba.surat_repository'] = function ($c) {
             return $c['laraiba.surat_repository_factory']->createSuratRepository();
         };
+
+        $pimple['laraiba.translation_manager'] = function () {
+            return new \Laraiba\Resource\Translation\TranslationManager();
+        };
+
     }
 }

@@ -130,3 +130,11 @@ $translationManager  = $serviceContainer->get('laraiba.translation_manager');
 ```
 
 
+Glossary
+--------
+
+- _Surat number_ = Surat number or Surat Index, ranging from 1 to 114.
+- _Ayat number_ = Ayat number of a surat, ranging from 1 to the end of a surat, eg. 7 for surat Al fatihah.
+- _Ayat Id_ = Ayat ID is a combination of Surat number and Ayat number, divided by a semicolon. eg. 1:7, 2:5, 112:3
+
+

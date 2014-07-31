@@ -24,5 +24,6 @@ class DefaultServiceProviderTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($pimple['laraiba.ayat_repository_factory']);
         $this->assertNotNull($pimple['laraiba.surat_repository']);
         $this->assertNotNull($pimple['laraiba.surat_repository_factory']);
+        $this->assertNotNull($pimple['laraiba.translation_manager']);
     }
 }

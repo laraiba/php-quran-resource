@@ -7,9 +7,11 @@ use Laraiba\Resource\Ayat\Ayat;
 
 class TranslatedAyat extends Ayat implements TranslatedAyatInterface
 {
+    private $ayat;
+
     public function setAyat(AyatInterface $ayat)
     {
-        return $this->ayat;
+        $this->ayat = $ayat;
     }
 
     public function getAyat()
